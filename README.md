@@ -1,4 +1,4 @@
-# Lift Log
+# Healthspan Training Journal
 
 A dependency-free mobile workout notebook. The hosted static app stores sessions and drafts in IndexedDB on each device, with no workout API, analytics, or external assets. The default plan is the four-day, 48-working-set upper/lower split, with two sets each of curls and pushdowns on both upper days.
 
@@ -16,6 +16,12 @@ Browser storage is not a normal user-visible Files document and can be cleared. 
 
 `.private/workout-history.json` contains the user's seven November sessions, inferred as 2026 from the conversation date. It is excluded from Git and the deployment. Import it on the phone through Settings. Missing reps, ambiguous carry entries, warmups, and conflicting headings are preserved in notes rather than invented as completed sets.
 
-## Deployment
+## GitHub Pages deployment
 
-`.openai/hosting.json` identifies the private Sites deployment; `dist/` is the complete static output. No build or package installation is needed. Change the service-worker cache version when updating app assets; a new service worker activates once existing app windows are closed.
+The primary host is https://fazilazhar.github.io/fitness-tracker/ with no sign-in requirement. The app uses relative asset paths and a scoped service worker, so it also works from a GitHub Pages project subdirectory.
+
+Push source changes to the `github` remote's `main` branch. Publish the static output using `git subtree push --prefix dist github gh-pages`. GitHub Pages serves the root of `gh-pages`. `.nojekyll` disables Jekyll processing. Keep `.private/` excluded from Git and the published output.
+
+The previous Sites deployment is identified by `.openai/hosting.json`; its `origin` remote is preserved separately. Changing hosts does not transfer browser storage: export from the previous host, then import on the GitHub Pages host.
+
+No build or package installation is needed. Change the service-worker cache version when updating app assets; a new service worker activates once existing app windows are closed.
