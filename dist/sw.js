@@ -1,4 +1,4 @@
-const CACHE='lift-log-shell-v3';
+const CACHE='lift-log-shell-v4';
 const FILES=['./','./index.html','./style.css','./app.js','./model.js','./manifest.webmanifest','./healthspan-logo.svg','./healthspan-text.otf','./healthspan-display.otf','./icon.svg','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('message',event=>{if(event.data?.type==='ACTIVATE_UPDATE')self.skipWaiting();});
