@@ -1,5 +1,5 @@
-const CACHE='lift-log-shell-v7';
-const FILES=['./','./index.html','./style.css','./app.js','./model.js','./manifest.webmanifest','./healthspan-logo.svg','./healthspan-text.otf','./healthspan-display.otf','./icon.svg','./icon-192.png','./icon-512.png'];
+const CACHE='lift-log-shell-v8';
+const FILES=['./','./index.html','./style.css','./app.js','./model.js','./manifest.webmanifest','./healthspan-text.otf','./healthspan-display.otf','./dumbbell.svg','./dumbbell-192.png','./dumbbell-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES.map(path=>new Request(path,{cache:'reload'})))).then(()=>self.skipWaiting())));
 self.addEventListener('message',event=>{if(event.data?.type==='ACTIVATE_UPDATE')self.skipWaiting();});
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('lift-log-shell-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));

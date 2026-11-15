@@ -1,4 +1,4 @@
-# Healthspan Training Journal
+# Workout Log
 
 A dependency-free mobile workout notebook. The hosted static app stores sessions and drafts in IndexedDB on each device, with no workout API, analytics, or external assets. The default plan is the four-day, 66-working-set upper/lower split, with two sets each of curls and pushdowns on both upper days.
 
@@ -25,3 +25,5 @@ Push source changes to the `github` remote's `main` branch. Publish the static o
 The previous Sites deployment is identified by `.openai/hosting.json`; its `origin` remote is preserved separately. Changing hosts does not transfer browser storage: export from the previous host, then import on the GitHub Pages host.
 
 No build or package installation is needed. Change the service-worker cache version when updating app assets; a new service worker activates once existing app windows are closed.
+
+The dumbbell icon is from Lucide (ISC license); its license is included in `dist/lucide-LICENSE.txt`.
