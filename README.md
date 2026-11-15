@@ -26,4 +26,4 @@ The previous Sites deployment is identified by `.openai/hosting.json`; its `orig
 
 No build or package installation is needed. Change the service-worker cache version when updating app assets; a new service worker activates once existing app windows are closed.
 
-The dumbbell icon is from Lucide (ISC license); its license is included in `dist/lucide-LICENSE.txt`.
+The plain horizontal barbell icon in `dist/barbell.svg` is dedicated to the public domain under CC0-1.0.
