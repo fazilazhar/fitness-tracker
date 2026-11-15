@@ -24,6 +24,6 @@ Push source changes to the `github` remote's `main` branch. Publish the static o
 
 The previous Sites deployment is identified by `.openai/hosting.json`; its `origin` remote is preserved separately. Changing hosts does not transfer browser storage: export from the previous host, then import on the GitHub Pages host.
 
-No build or package installation is needed. Change the service-worker cache version when updating app assets; a new service worker activates once existing app windows are closed.
+No build or package installation is needed. Change the service-worker cache version when updating app assets; the app checks for updates on return to the foreground, reconnect, and every five minutes while visible. Settings → Update app checks immediately. New app assets activate only after a complete download. Reload waits for pending notebook writes; failed writes prevent reload.
 
 The plain horizontal barbell icon in `dist/barbell.svg` is dedicated to the public domain under CC0-1.0.
