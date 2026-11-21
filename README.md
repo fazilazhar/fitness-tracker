@@ -1,6 +1,6 @@
 # Workout Log
 
-A dependency-free mobile workout notebook. The hosted static app stores sessions and drafts in IndexedDB on each device, with no workout API, analytics, or external assets. The default plan is the four-day, 72-working-set upper/lower split, with two sets each of curls and pushdowns on both upper days.
+A dependency-free mobile workout notebook. The hosted static app stores sessions and drafts in IndexedDB on each device, with no workout API, analytics, or external assets. The default plan is the four-day, 70-working-set upper/lower split, with two sets each of curls and pushdowns on both upper days.
 
 Run `npm run dev` and open http://localhost:4173. Run `npm test` for data and program checks.
 
